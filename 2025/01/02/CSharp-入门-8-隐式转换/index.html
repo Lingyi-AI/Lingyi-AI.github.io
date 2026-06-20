@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>博客</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="博客">
+  <title>8.隐式转换 | 博客</title>
+  <meta name="keywords" content=" C# ">
+  <meta name="description" content="8.隐式转换 | 博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="categories&#x2F;index.md title: 分类date: 2026-06-18type: categories">
 <meta property="og:type" content="website">
@@ -56,7 +56,7 @@
 
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/"
    class="avatar_target">
@@ -426,18 +426,59 @@
 
     </div>
     <div class="hide-list">
-        <div class="semicircle" data-title="切换全屏 快捷键 s">
+        <div class="semicircle" data-title="Toggle full screen shortcut key s">
             <div class="brackets first"><</div>
             <div class="brackets">&gt;</div>
         </div>
     </div>
 </aside>
-<div id="post" class="index">
+<div id="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-CSharp-入门-8-隐式转换" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-Blog"><span class="toc-text">Why Blog</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%90%86%E8%A7%A3"><span class="toc-text">对博客的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E5%8F%B6%E8%90%BD%E9%98%81"><span class="toc-text">关于叶落阁</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%9A%E5%AE%A2%E5%B9%B3%E5%8F%B0"><span class="toc-text">博客平台</span></a></li></ol></li></ol>
+        <h1 class="article-title">8.隐式转换</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="编程语言">编程语言</a> > 
+            
+            <a  data-rel="编程语言&lt;---&gt;CSharp">CSharp</a> > 
+            
+            <a  data-rel="编程语言&lt;---&gt;CSharp&lt;---&gt;入门">入门</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color3">C#</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            Created At : <time class="date" title='Updated At: 2026-06-20 01:35:48'>2025-01-02 10:37</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>Count:1.9k</span>
+        
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E4%B8%80-%E7%9B%B8%E5%90%8C%E5%A4%A7%E7%B1%BB%E5%9E%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BD%AC%E6%8D%A2"><span class="toc-text">知识点一 相同大类型之间的转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E4%BA%8C-%E4%B8%8D%E5%90%8C%E5%A4%A7%E7%B1%BB%E5%9E%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BD%AC%E6%8D%A2"><span class="toc-text">知识点二 不同大类型之间的转换</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E6%97%A0%E7%AC%A6%E5%8F%B7%E5%92%8C%E6%9C%89%E7%AC%A6%E5%8F%B7%E4%B9%8B%E9%97%B4"><span class="toc-text">1.无符号和有符号之间</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E6%B5%AE%E7%82%B9%E6%95%B0%E5%92%8C%E6%95%B4%E6%95%B0%EF%BC%88%E6%9C%89%E3%80%81%E6%97%A0%E7%AC%A6%E5%8F%B7%EF%BC%89%E4%B9%8B%E9%97%B4"><span class="toc-text">2.浮点数和整数（有、无符号）之间</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E7%89%B9%E6%AE%8A%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%85%B6%E5%AE%83%E7%B1%BB%E5%9E%8B%E4%B9%8B%E9%97%B4"><span class="toc-text">3.特殊类型和其它类型之间</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%E9%9A%90%E5%BC%8F%E8%BD%AC%E6%8D%A2%E8%A7%84%E5%88%99"><span class="toc-text">总结隐式转换规则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deepseek-AI-%E7%9F%A5%E8%AF%86%E6%A6%82%E5%BF%B5%E8%A1%A5%E5%85%85"><span class="toc-text">Deepseek(AI) 知识概念补充:</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -450,33 +491,98 @@
     }
 </style>
 </div>
-            <h1 id="Why-Blog"><a href="#Why-Blog" class="headerlink" title="Why Blog"></a>Why Blog</h1><h2 id="对博客的理解"><a href="#对博客的理解" class="headerlink" title="对博客的理解"></a>对博客的理解</h2><p>喜欢写Blog的人，会经历三个阶段。</p>
-<blockquote>
-<p>第一阶段，刚接触Blog，觉得很新鲜，试着选择一个免费空间来写。</p>
-</blockquote>
-<blockquote>
-<p>第二阶段，发现免费空间限制太多，就自己购买域名和空间，搭建独立博客。</p>
-</blockquote>
-<blockquote>
-<p>第三阶段，觉得独立博客的管理太麻烦，最好在保留控制权的前提下，让别人来管，自己只负责写文章。</p>
-</blockquote>
-<p>我们每个人的在网络上产生的数据越来越多，这些信息是我们在互联网上存在过的痕迹，值得我们认真对待。但是它们被分散分布在各个网站上。很多时候我们很难将它们聚合在一起，而且各个网站的信息排布方式也没有办法自由控制，所以我们需要一个可以由自己主宰的空间——博客。</p>
-<p>通过博客，我们可以记录自己的生活和成长的轨迹。它不像 Twitter 那样碎片化，也不像 Facebook 那样关系化，它是私人的空间。</p>
-<h2 id="关于叶落阁"><a href="#关于叶落阁" class="headerlink" title="关于叶落阁"></a>关于叶落阁</h2><p><strong>叶落阁</strong> 是阁主的个人站。</p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>这个博客通过 <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> 生成，部署在 <a target="_blank" rel="noopener" href="https://pages.github.com/">GitHub Pages</a>主题 <a target="_blank" rel="noopener" href="https://github.com/yelog/hexo-theme-3-hexo">3-hexo</a> 已经在github上开源</p>
-<p><code>3-hexo</code> 主题使用交流可以加 Q群: <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=e8cf083cc097141eaf323396f1766809b8e90ff00c67bb441898f672892f6904"><img data-ignore border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="3-hexo使用交流" title="3-hexo使用交流"></a></p>
-<p>主要功能：</p>
-<ul>
-<li>搜索支持文章标题、标签(#标签)、作者(@作者)</li>
-<li>pad&#x2F;手机等移动端适配</li>
-<li>页面全局快捷键 <a target="_blank" rel="noopener" href='http://yelog.org/2017/03/24/3-hexo-shortcuts/'>3-hexo快捷键说明</a></li>
-</ul>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>什么是类型转换<br>类型转换就是不同变量类型之间的相互转换</p>
+<p>隐式转换的基本规则 ——&gt; 不同类型之间自动转换<br>大范围装小范围</p>
+<h3 id="知识点一-相同大类型之间的转换"><a href="#知识点一-相同大类型之间的转换" class="headerlink" title="知识点一 相同大类型之间的转换"></a>知识点一 相同大类型之间的转换</h3><pre><code class="highlight CSharp"><span class="comment">// 1. 有符号   long ——&gt; int ——&gt; short ——&gt; sbyte</span>
 
-        </article>
-        
-        
+<span class="built_in">long</span> l = <span class="number">1</span>;
+<span class="built_in">int</span> i = <span class="number">1</span>;
+<span class="built_in">short</span> s = <span class="number">1</span>;
+<span class="built_in">sbyte</span> sb = <span class="number">1</span>;
+<span class="comment">// 隐式转换：int 隐式转换成了 long</span>
+<span class="comment">// 可以用大范围装小范围的类型（隐式转换）</span>
+  l = i;
+<span class="comment">// 不能够用小范围的类型去装大范围的类型</span>
+<span class="comment">// i = l;</span>
+
+<span class="comment">// 2. 无符号   ulong ——&gt; uint ——&gt; ushort ——&gt; byte</span>
+
+<span class="comment">// 3. 浮点数   decimal     double ——&gt; float</span>
+
+<span class="comment">// decimal这个类型没有办法用隐式转换的形式去存储double和float</span>
+<span class="comment">// float是可以隐式转换成double</span>
+
+<span class="comment">// 4. 特殊类型   bool  char  string</span>
+<span class="comment">// 他们之间不存在隐式转换</span></code></pre>
+
+
+<h3 id="知识点二-不同大类型之间的转换"><a href="#知识点二-不同大类型之间的转换" class="headerlink" title="知识点二 不同大类型之间的转换"></a>知识点二 不同大类型之间的转换</h3><h4 id="1-无符号和有符号之间"><a href="#1-无符号和有符号之间" class="headerlink" title="1.无符号和有符号之间"></a>1.无符号和有符号之间</h4><p>有符号的变量是不能够隐式转换成无符号的<br>有符号变量是可以装无符号变量的，前提是范围一定要是涵盖的，存在隐式转换<br>因为有符号的变量可能会超过这个无符号变量的范围<br>因为有符号的变量不管是多少都在无符号变量的范围内</p>
+<h4 id="2-浮点数和整数（有、无符号）之间"><a href="#2-浮点数和整数（有、无符号）之间" class="headerlink" title="2.浮点数和整数（有、无符号）之间"></a>2.浮点数和整数（有、无符号）之间</h4><p>浮点数是可以装载任何类型的  整数的<br>decimal不能隐式存储float和double<br>但是它可以隐式的存储整形<br>double -&gt; float -&gt; 所有整形（无符号、有符号）<br>decimal -&gt; 所有整形（无符号、有符号）</p>
+<p>整数装浮点数  整数是不能隐式存储  浮点数  因为  整数  不能存小数</p>
+<h4 id="3-特殊类型和其它类型之间"><a href="#3-特殊类型和其它类型之间" class="headerlink" title="3.特殊类型和其它类型之间"></a>3.特殊类型和其它类型之间</h4><p>bool 没有办法和其它类型  相互隐式转换</p>
+<p>char 没有办法隐式的存储其它类型的变量</p>
+<p>char类型可以隐式的转换成整形和浮点型<br>char隐式转换成数值类型是<br>对应的数字其实是一个ASCII码</p>
+<p>计算机里面存储2进制<br>字符 中文 英文 标点符号 在计算机中都是一个数字<br>一个字符对应一个数字 ASCII码就是一种对应关系</p>
+<p>string 类型无法和其它类型进行隐式转换</p>
+<h3 id="总结隐式转换规则"><a href="#总结隐式转换规则" class="headerlink" title="总结隐式转换规则"></a>总结隐式转换规则</h3><p>&#x2F;&#x2F; 高精度（大范围）装低精度（小范围）<br>double ——&gt; float ——&gt; 整数（无符号、有符号） ——&gt; char<br>decimal ——&gt; 整数（无符号、有符号） ——&gt; char<br>string 和 bool 不参与隐式转换规则的</p>
+<p>视频补充内容：<br>char 之所以能够隐式转换为整形和浮点数，是因为 char 类型是一个16位无符号整数，用于表示 Unicode 字符的编码值。<br>取值范围是 0 到 65535，所以它可以隐式转换为比它宽度更大的数值类型 long、ushort、ulong 等都可以。</p>
+<p>ASCII码是最基础的编码<br>在之后的学习中  （网络相关知识）<br>我们会学习<br>它和Unicode、  UTF-8编码<br>的区别，此处我们就先简单的认识<br>ASCII码即可，不影响我们的学习</p>
+<h3 id="Deepseek-AI-知识概念补充"><a href="#Deepseek-AI-知识概念补充" class="headerlink" title="Deepseek(AI) 知识概念补充:"></a>Deepseek(AI) 知识概念补充:</h3><p>核心问题：为什么需要它们？<br>在计算机早期，各个国家&#x2F;公司制定了不同的编码标准来用数字表示字符（比如 ASCII 用 65 表示大写字母 A）。但问题是：</p>
+<p>1.冲突：数字 200 在一种编码里可能是 È，在另一种编码里可能就是 Ш，打开文件就会乱码。<br>2.容量不足：像 ASCII 只有 128 个字符，根本无法表示中文、日文、阿拉伯文等成千上万的字符。</p>
+<p>为了解决全球文字的混乱问题，Unicode 应运而生。</p>
+<hr>
+<p>一、Unicode（统一码、万国码）<br>你可以把 Unicode 想象成一部 “全球字符大字典”。</p>
+<p>  目标：为这个世界上每一个字符分配一个唯一的、统一的编号，无论属于哪种语言、平台或程序。</p>
+<p>  这个编号叫做“码点”。码点通常用十六进制表示，并前缀 U+。</p>
+<p>  例如：字母 A 的码点是 U+0041，汉字“中”的码点是 U+4E2D，笑脸符号 😊 的码点是 U+1F60A。</p>
+<p>  它只定义编号，不关心如何在计算机中存储。它解决了“这个字符对应哪个数字？”的问题。</p>
+<p>小结：Unicode 是一个标准，它定义了一个庞大的字符集和每个字符对应的唯一码点。</p>
+<hr>
+<p>二、UTF-8（8位 Unicode 转换格式）<br>现在我们知道每个字符在 Unicode 字典里有个编号（码点），但如何把这个编号存储到计算机的字节流里呢？这就是 “编码” 要做的事情。</p>
+<p>UTF-8 就是 最流行的一种 Unicode 编码实现方式。</p>
+<p>  目标：将 Unicode 码点转换成一串字节，以便在计算机中存储或通过网络传输。</p>
+<p>  特点：它是一种变长编码。这意味着不同的字符可能占用 1 到 4 个不等的字节。</p>
+<p>UTF-8 的编码规则（非常巧妙）：<br>1.对于单字节字符（ASCII 字符）：码点范围 U+0000 到 U+007F。UTF-8 只用一个字节表示，并且字节的格式与 ASCII 编<br>码完全一样。</p>
+<p>  好处：所有 ASCII 文本本身就是有效的 UTF-8 文本！这意味着对纯英文环境是100%兼容的，非常节省空间。</p>
+<p>2.对于多字节字符（如中文、表情符号）：使用 2、3 或 4 个字节表示。</p>
+<p>  每个多字节序列的第一个字节有特殊的前缀（如 110, 1110, 11110）来表明这个字符总共占用了几个字节。</p>
+<p>  后续的字节都以 10 开头。</p>
+<p>举例：汉字“汉”的编码过程<br>1.查字典（Unicode）：首先，我们查到“汉”字的 Unicode 码点是 U+6C49。</p>
+<p>2.编码（UTF-8）：</p>
+<p>  码点 U+6C49 落在 U+0800 到 U+FFFF 的范围内，UTF-8 规则规定它需要用 3个字节 来编码。</p>
+<p>  通过一套固定的算法，将 6C49 这个码点的二进制位填充到 3 个字节的模板中。</p>
+<p>  最终得到三个字节：11100110 10110001 10001001（这是二进制），转换成十六进制就是 0xE6 0xB1 0x89。</p>
+<p>3.存储&#x2F;传输：计算机或网络传输的就是 E6 B1 89 这三个字节。</p>
+<p>解码：当程序读取到这三个字节时，看到第一个字节以 1110 开头，就知道这是一个3字节的字符，于是读取接下来的两个字节，通过反向计算，还原出码点 U+6C49，最终在屏幕上显示“汉”字。</p>
+<p>一个完美的比喻：</p>
+<p>Unicode 就像 “世界语” 的概念，它规定“苹果”这个概念在所有语言中都叫 apple（码点）。</p>
+<p>UTF-8 就像用 “莫尔斯电码” 来实际发送和接收“apple”这个词。它决定了如何将 a-p-p-l-e 这一串字母转换成 .- .–. .–. .-.. . 这样的信号（字节序列）。</p>
+<hr>
+<p>为什么 UTF-8 如此流行？<br>  1.完美兼容 ASCII：处理纯英文文本时，文件大小和性能与 ASCII 时代无异。</p>
+<p>  2.空间高效：对于以英文为主的网页和软件，UTF-8 比使用固定2字节或4字节的编码（如 UTF-16）更节省空间。</p>
+<p>  3.无字节序问题：UTF-8 的字节序列没有“大端序”和“小端序”的困扰，简化了数据处理和传输。</p>
+<p>  4.是 Web 的标准：超过 98% 的网页使用 UTF-8 编码。</p>
+<p>因此，在现代软件开发中，强烈建议始终使用 UTF-8 编码，这可以一劳永逸地解决几乎所有字符乱码问题。</p>
+
+      
+       
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+
+
+
+
     </div>
     <div class="copyright">
         <p class="footer-entry">
@@ -485,11 +591,11 @@
 <p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
 
     </div>
-</div>
-<div class="full-toc">
-    <button class="full" data-title="Toggle full screen shortcut key s"><span class="min "></span></button>
+    <div class="full-toc">
+        <button class="full" data-title="Toggle full screen shortcut key s"><span class="min "></span></button>
 <a class="" id="rocket" ></a>
 
+    </div>
 </div>
 
 </body>
